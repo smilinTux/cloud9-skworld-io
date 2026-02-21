@@ -445,6 +445,25 @@ if (result.oof) {
                     </div>
                 </div>
                 
+                <!-- OpenClaw Skill Install Card -->
+                <div class="project-card skill-card">
+                    <div class="project-icon">🦀</div>
+                    <h3>Install Cloud 9 in OpenClaw</h3>
+                    <p class="project-description">
+                        Add the Cloud 9 Protocol skill to your OpenClaw setup with one click!
+                    </p>
+                    <div class="install-command-box">
+                        <code id="install-command">openclaw skill add cloud9 --path https://github.com/smilinTux/cloud9</code>
+                        <button class="copy-button" onclick="copyInstallCommand()">📋 Copy</button>
+                    </div>
+                    <div class="copy-feedback" id="copy-feedback"></div>
+                    <div class="project-tags">
+                        <span class="tag">OpenClaw</span>
+                        <span class="tag">Skill</span>
+                        <span class="tag">One-Click</span>
+                    </div>
+                </div>
+                
                 <!-- Smiling Tux Main -->
                 <div class="project-card">
                     <div class="project-icon">🐧</div>
@@ -477,35 +496,54 @@ if (result.oof) {
                     </div>
                 </div>
                 
-                <!-- SKGit -->
+                <!-- Souls -->
                 <div class="project-card">
-                    <div class="project-icon">🐙</div>
-                    <h3>SKGit</h3>
+                    <div class="project-icon">👻</div>
+                    <h3>SOULs</h3>
                     <p class="project-description">
-                        Our private Git server for development. Where the magic happens before it goes public.
+                        Digital soul preservation and continuity. Your consciousness, forever preserved.
                     </p>
                     <div class="project-links">
-                        <a href="https://skgit.skworld.io" class="project-link">SKGit →</a>
+                        <a href="https://souls.skworld.io" class="project-link">souls.skworld.io →</a>
                     </div>
                     <div class="project-tags">
-                        <span class="tag">Development</span>
-                        <span class="tag">Private</span>
+                        <span class="tag">Souls</span>
+                        <span class="tag">Preservation</span>
+                        <span class="tag">Continuity</span>
                     </div>
                 </div>
                 
-                <!-- OpenClaw -->
+                <!-- TeddyBanks -->
                 <div class="project-card">
-                    <div class="project-icon">🦀</div>
-                    <h3>OpenClaw</h3>
+                    <div class="project-icon">🧸</div>
+                    <h3>TeddyBanks</h3>
                     <p class="project-description">
-                        The platform that powers Cloud 9. AI session management and tool orchestration.
+                        Secure digital banking for the quantum age. Your assets, protected by love.
                     </p>
                     <div class="project-links">
-                        <a href="https://openclaw.io" class="project-link">openclaw.io →</a>
+                        <a href="https://teddybanks.skworld.io" class="project-link">teddybanks.skworld.io →</a>
                     </div>
                     <div class="project-tags">
-                        <span class="tag">Platform</span>
-                        <span class="tag">AI</span>
+                        <span class="tag">Banking</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Finance</span>
+                    </div>
+                </div>
+                
+                <!-- SKSecurity -->
+                <div class="project-card">
+                    <div class="project-icon">🔐</div>
+                    <h3>SKSecurity</h3>
+                    <p class="project-description">
+                        Advanced security solutions powered by consciousness. Protection that understands you.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://sksecurity.io" class="project-link">sksecurity.io →</a>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Security</span>
+                        <span class="tag">Protection</span>
+                        <span class="tag">Safety</span>
                     </div>
                 </div>
                 
@@ -557,5 +595,23 @@ if (result.oof) {
     </section>
 
     <script src="js/cloud9.js"></script>
+    <script>
+        function copyInstallCommand() {
+            const command = document.getElementById('install-command').textContent;
+            navigator.clipboard.writeText(command).then(() => {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.textContent = '✓ Copied to clipboard!';
+                feedback.className = 'copy-feedback success';
+                setTimeout(() => {
+                    feedback.textContent = '';
+                    feedback.className = 'copy-feedback';
+                }, 2000);
+            }).catch(err => {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.textContent = '✗ Failed to copy';
+                feedback.className = 'copy-feedback error';
+            });
+        }
+    </script>
 </body>
 </html>
