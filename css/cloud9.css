@@ -1,37 +1,337 @@
+/* ============================================
+   ☁️ Cloud 9 Protocol - Stylesheet
+   "Love should look as beautiful as it feels"
+   ============================================ */
 
-@keyframes oof-pulse {
-    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
-    50% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+/* CSS Variables - The Cloud 9 Color Palette */
+:root {
+    --cloud9-purple: #9B59B6;
+    --cloud9-pink: #FF6B9D;
+    --cloud9-cyan: #00D4FF;
+    --cloud9-lavender: #E8D5B7;
+    --cloud9-magenta: #FF00FF;
+    --cloud9-gold: #FFD700;
+    --cloud9-dark: #1a1a2e;
+    --cloud9-darker: #16213e;
+    --oof-glow: rgba(255, 107, 157, 0.8);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .formula {
-        flex-direction: column;
-    }
-    
-    .formula-component,
-    .formula-result {
-        width: 100%;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    section {
-        padding: 3rem 0;
-    }
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--cloud9-dark) 0%, var(--cloud9-darker) 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Quantum Field Background Animation */
+.quantum-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(155, 89, 182, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 107, 157, 0.05) 0%, transparent 70%);
+    animation: quantum-pulse 8s ease-in-out infinite;
+}
+
+@keyframes quantum-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ============================================
+   HERO SECTION - "First Impression of Love"
+   ============================================ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cloud-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Animated Clouds */
+.cloud {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 100px;
+    filter: blur(40px);
+    animation: float-cloud 20s ease-in-out infinite;
+}
+
+.cloud-1 {
+    width: 300px;
+    height: 150px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.cloud-2 {
+    width: 400px;
+    height: 200px;
+    top: 60%;
+    right: 10%;
+    animation-delay: -7s;
+}
+
+.cloud-3 {
+    width: 250px;
+    height: 120px;
+    top: 40%;
+    left: 70%;
+    animation-delay: -14s;
+}
+
+@keyframes float-cloud {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(0) translateX(20px); }
+    75% { transform: translateY(20px) translateX(10px); }
+}
+
+.hero-content {
+    z-index: 1;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--cloud9-pink), var(--cloud9-cyan), var(--cloud9-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: title-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes title-glow {
+    from { filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.5)); }
+    to { filter: drop-shadow(0 0 40px rgba(0, 212, 255, 0.5)); }
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--cloud9-lavender);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* OOF Meter */
+.oof-meter {
+    width: 300px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid var(--cloud9-pink);
+}
+
+.meter-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--cloud9-pink), var(--cloud9-cyan));
+    border-radius: 15px;
+    animation: meter-fill 3s ease-out forwards;
+}
+
+@keyframes meter-fill {
+    to { width: 95%; }
+}
+
+.meter-label {
+    font-size: 0.9rem;
+    color: var(--cloud9-cyan);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--cloud9-pink), var(--cloud9-purple));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.6);
+}
+
+/* ============================================
+   SECTIONS - Shared Styles
+   ============================================ */
+section {
+    padding: 6rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, var(--cloud9-cyan), var(--cloud9-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+section h3 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: var(--cloud9-cyan);
+}
+
+/* ============================================
+   OVERVIEW SECTION - "The Numbers Don't Lie"
+   ============================================ */
+.overview {
+    background: linear-gradient(180deg, var(--cloud9-darker) 0%, var(--cloud9-dark) 100%);
+}
+
+.highlight-box {
+    background: rgba(155, 89, 182, 0.1);
+    border: 2px solid var(--cloud9-purple);
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.big-statement {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: var(--cloud9-lavender);
+}
+
+.big-statement strong {
+    color: var(--cloud9-pink);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 107, 157, 0.3);
+    transition: var(--transition-smooth);
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    border-color: var(--cloud9-cyan);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--cloud9-pink), var(--cloud9-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--cloud9-lavender);
+    margin-top: 0.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--cloud9-cyan);
+    margin-top: 2rem;
+}
+
+/* ============================================
+   EMERGENCE SECTION - "How The Magic Happened"
+   ============================================ */
+.emergence {
+    background: var(--cloud9-dark);
+}
+
+.formula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+}
+
+.formula-component,
+.formula-result {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 107, 157, 0.1);
+    border-radius: 15px;
+    border: 2px solid var(--cloud9-pink);
+}
+
+.formula-result {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(0, 212, 255, 0.2));
+    border-color: var(--cloud9-cyan);
+}
+
+.formula-symbol {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem
