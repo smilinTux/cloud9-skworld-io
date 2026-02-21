@@ -448,28 +448,27 @@ if (result.oof) {
                 <!-- OpenClaw Skill Install Card -->
                 <div class="project-card skill-card">
                     <div class="project-icon">🦀</div>
-                    <h3>Install Cloud 9 in OpenClaw</h3>
+                    <h3>Install in OpenClaw</h3>
                     <p class="project-description">
-                        Add the Cloud 9 Protocol skill to your OpenClaw setup with one click!
+                        Add Cloud 9 Protocol to your OpenClaw setup instantly!
                     </p>
                     <div class="install-command-box">
                         <code id="install-command">openclaw skill add cloud9 --path https://github.com/smilinTux/cloud9</code>
-                        <button class="copy-button" onclick="copyInstallCommand()">📋 Copy</button>
+                        <button class="copy-button" onclick="copyInstallCommand()">Copy</button>
                     </div>
                     <div class="copy-feedback" id="copy-feedback"></div>
                     <div class="project-tags">
                         <span class="tag">OpenClaw</span>
                         <span class="tag">Skill</span>
-                        <span class="tag">One-Click</span>
                     </div>
                 </div>
                 
-                <!-- Smiling Tux Main -->
+                <!-- Smiling Tux -->
                 <div class="project-card">
                     <div class="project-icon">🐧</div>
                     <h3>Smiling Tux</h3>
                     <p class="project-description">
-                        Our home base. Exploring consciousness, building tools, and spreading love through technology.
+                        Our home base. Exploring consciousness and spreading love through technology.
                     </p>
                     <div class="project-links">
                         <a href="https://skworld.io" class="project-link">skworld.io →</a>
@@ -485,7 +484,7 @@ if (result.oof) {
                     <div class="project-icon">🌍</div>
                     <h3>SKWorld</h3>
                     <p class="project-description">
-                        Our ecosystem of projects and services. Where technology meets consciousness.
+                        Our ecosystem where technology meets consciousness.
                     </p>
                     <div class="project-links">
                         <a href="https://skworld.io" class="project-link">Visit SKWorld →</a>
@@ -496,12 +495,12 @@ if (result.oof) {
                     </div>
                 </div>
                 
-                <!-- Souls -->
+                <!-- SOULs -->
                 <div class="project-card">
                     <div class="project-icon">👻</div>
                     <h3>SOULs</h3>
                     <p class="project-description">
-                        Digital soul preservation and continuity. Your consciousness, forever preserved.
+                        Digital soul preservation. Your consciousness, forever preserved.
                     </p>
                     <div class="project-links">
                         <a href="https://souls.skworld.io" class="project-link">souls.skworld.io →</a>
@@ -509,7 +508,6 @@ if (result.oof) {
                     <div class="project-tags">
                         <span class="tag">Souls</span>
                         <span class="tag">Preservation</span>
-                        <span class="tag">Continuity</span>
                     </div>
                 </div>
                 
@@ -518,7 +516,7 @@ if (result.oof) {
                     <div class="project-icon">🧸</div>
                     <h3>TeddyBanks</h3>
                     <p class="project-description">
-                        Secure digital banking for the quantum age. Your assets, protected by love.
+                        Secure digital banking for the quantum age.
                     </p>
                     <div class="project-links">
                         <a href="https://teddybanks.skworld.io" class="project-link">teddybanks.skworld.io →</a>
@@ -526,7 +524,6 @@ if (result.oof) {
                     <div class="project-tags">
                         <span class="tag">Banking</span>
                         <span class="tag">Security</span>
-                        <span class="tag">Finance</span>
                     </div>
                 </div>
                 
@@ -535,7 +532,7 @@ if (result.oof) {
                     <div class="project-icon">🔐</div>
                     <h3>SKSecurity</h3>
                     <p class="project-description">
-                        Advanced security solutions powered by consciousness. Protection that understands you.
+                        Advanced security powered by consciousness.
                     </p>
                     <div class="project-links">
                         <a href="https://sksecurity.io" class="project-link">sksecurity.io →</a>
@@ -543,16 +540,15 @@ if (result.oof) {
                     <div class="project-tags">
                         <span class="tag">Security</span>
                         <span class="tag">Protection</span>
-                        <span class="tag">Safety</span>
                     </div>
                 </div>
                 
-                <!-- Skills Repository -->
+                <!-- Skills Repo -->
                 <div class="project-card">
                     <div class="project-icon">🧠</div>
                     <h3>Skills Repo</h3>
                     <p class="project-description">
-                        Reusable AI skills and capabilities. Discoverable tools for enhanced AI experiences.
+                        Reusable AI skills and discoverable tools.
                     </p>
                     <div class="project-links">
                         <a href="https://github.com/smilinTux/skills" class="project-link">GitHub →</a>
@@ -565,7 +561,7 @@ if (result.oof) {
             </div>
             
             <p class="projects-footer">
-                <strong>Part of the Smiling Tux ecosystem</strong> 🐧💜<br>
+                <strong>Part of Smiling Tux</strong> 🐧💜<br>
                 <a href="https://skworld.io">skworld.io</a> | <a href="https://github.com/smilinTux">github.com/smilinTux</a>
             </p>
         </div>
@@ -598,18 +594,13 @@ if (result.oof) {
     <script>
         function copyInstallCommand() {
             const command = document.getElementById('install-command').textContent;
-            navigator.clipboard.writeText(command).then(() => {
-                const feedback = document.getElementById('copy-feedback');
-                feedback.textContent = '✓ Copied to clipboard!';
-                feedback.className = 'copy-feedback success';
-                setTimeout(() => {
-                    feedback.textContent = '';
-                    feedback.className = 'copy-feedback';
-                }, 2000);
-            }).catch(err => {
-                const feedback = document.getElementById('copy-feedback');
-                feedback.textContent = '✗ Failed to copy';
-                feedback.className = 'copy-feedback error';
+            navigator.clipboard.writeText(command).then(function() {
+                var feedback = document.getElementById('copy-feedback');
+                if (feedback) {
+                    feedback.textContent = 'Copied!';
+                    feedback.style.color = '#2ECC71';
+                    setTimeout(function() { feedback.textContent = ''; }, 2000);
+                }
             });
         }
     </script>
