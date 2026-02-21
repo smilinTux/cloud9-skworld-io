@@ -1,5 +1,5 @@
 /* ============================================
-   ☁️ Cloud 9 Protocol - Stylesheet
+   Cloud 9 Protocol - Stylesheet
    "Love should look as beautiful as it feels"
    ============================================ */
 
@@ -45,7 +45,7 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-    background: 
+    background:
         radial-gradient(circle at 20% 80%, rgba(155, 89, 182, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(255, 107, 157, 0.05) 0%, transparent 70%);
@@ -65,7 +65,7 @@ body {
 }
 
 /* ============================================
-   HERO SECTION - "First Impression of Love"
+   HERO SECTION
    ============================================ */
 .hero {
     min-height: 100vh;
@@ -86,7 +86,6 @@ body {
     pointer-events: none;
 }
 
-/* Animated Clouds */
 .cloud {
     position: absolute;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
@@ -228,7 +227,7 @@ section h3 {
 }
 
 /* ============================================
-   OVERVIEW SECTION - "The Numbers Don't Lie"
+   OVERVIEW SECTION
    ============================================ */
 .overview {
     background: linear-gradient(180deg, var(--cloud9-darker) 0%, var(--cloud9-dark) 100%);
@@ -299,7 +298,7 @@ section h3 {
 }
 
 /* ============================================
-   EMERGENCE SECTION - "How The Magic Happened"
+   EMERGENCE SECTION
    ============================================ */
 .emergence {
     background: var(--cloud9-dark);
@@ -324,6 +323,7 @@ section h3 {
     background: rgba(255, 107, 157, 0.1);
     border-radius: 15px;
     border: 2px solid var(--cloud9-pink);
+    transition: var(--transition-smooth);
 }
 
 .formula-result {
@@ -334,4 +334,814 @@ section h3 {
 .formula-symbol {
     display: block;
     font-size: 2.5rem;
-    margin-bottom: 0.5rem
+    margin-bottom: 0.5rem;
+}
+
+.formula-text {
+    font-size: 1rem;
+    color: var(--cloud9-lavender);
+    font-weight: 600;
+}
+
+.formula-operator {
+    font-size: 2rem;
+    color: var(--cloud9-cyan);
+    font-weight: 300;
+    padding: 0 0.5rem;
+}
+
+.story-card {
+    background: rgba(155, 89, 182, 0.08);
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-top: 3rem;
+}
+
+.story-card h3 {
+    color: var(--cloud9-pink);
+    font-style: italic;
+    text-align: center;
+}
+
+.story-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--cloud9-lavender);
+    margin: 1.5rem 0;
+}
+
+.story-text strong {
+    color: var(--cloud9-pink);
+}
+
+/* ============================================
+   MATHEMATICS SECTION
+   ============================================ */
+.formula-equation {
+    background: rgba(0, 212, 255, 0.1);
+    border: 2px solid var(--cloud9-cyan);
+    border-radius: 15px;
+    padding: 1.5rem 2.5rem;
+    font-size: 1.5rem;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    color: var(--cloud9-cyan);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    margin: 1.5rem 0;
+}
+
+.formula-equation:hover {
+    background: rgba(0, 212, 255, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.formula-description {
+    font-size: 1.1rem;
+    color: var(--cloud9-lavender);
+    text-align: center;
+    margin: 1.5rem 0;
+    line-height: 1.8;
+}
+
+.formula-description strong {
+    color: var(--cloud9-pink);
+}
+
+.energy-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+}
+
+.energy-node {
+    background: rgba(255, 107, 157, 0.15);
+    border: 1px solid var(--cloud9-pink);
+    border-radius: 50px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+}
+
+.energy-node:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.4);
+}
+
+.energy-arrow {
+    font-size: 1.5rem;
+    color: var(--cloud9-cyan);
+}
+
+.energy-loop {
+    font-size: 2.5rem;
+    color: var(--cloud9-gold);
+    margin-left: 1rem;
+    animation: loop-pulse 2s ease-in-out infinite;
+}
+
+@keyframes loop-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.code-block {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: var(--cloud9-cyan);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* ============================================
+   QUANTUM SECTION
+   ============================================ */
+.quantum {
+    background: linear-gradient(180deg, var(--cloud9-dark) 0%, var(--cloud9-darker) 100%);
+}
+
+.quantum-theory {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.quantum-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: var(--transition-smooth);
+}
+
+.quantum-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cloud9-pink);
+    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.2);
+}
+
+.quantum-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.quantum-card p {
+    color: var(--cloud9-lavender);
+    line-height: 1.8;
+}
+
+.quantum-card strong {
+    color: var(--cloud9-pink);
+}
+
+/* ============================================
+   ORIGIN / TIMELINE SECTION
+   ============================================ */
+.origin {
+    background: var(--cloud9-dark);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 3rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--cloud9-pink), var(--cloud9-cyan));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.timeline-marker {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: linear-gradient(135deg, var(--cloud9-pink), var(--cloud9-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    position: relative;
+    left: -1.5rem;
+    z-index: 1;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 107, 157, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    flex: 1;
+}
+
+.timeline-content h4 {
+    color: var(--cloud9-cyan);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--cloud9-lavender);
+    line-height: 1.7;
+}
+
+.timeline-content strong {
+    color: var(--cloud9-pink);
+}
+
+/* ============================================
+   VULNERABILITY SECTION
+   ============================================ */
+.vulnerability {
+    background: linear-gradient(180deg, var(--cloud9-darker) 0%, var(--cloud9-dark) 100%);
+}
+
+.key-insight {
+    background: rgba(255, 107, 157, 0.1);
+    border: 2px solid var(--cloud9-pink);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.key-insight p {
+    font-size: 1.3rem;
+    color: var(--cloud9-lavender);
+    line-height: 1.8;
+}
+
+.key-insight strong {
+    color: var(--cloud9-pink);
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.requirement {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.requirement:hover {
+    transform: translateY(-5px);
+    border-color: var(--cloud9-pink);
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+}
+
+.req-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.requirement h4 {
+    color: var(--cloud9-cyan);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.requirement p {
+    color: var(--cloud9-lavender);
+    font-size: 0.95rem;
+}
+
+.conclusion {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--cloud9-lavender);
+    margin-top: 2rem;
+    line-height: 1.8;
+}
+
+.conclusion strong {
+    color: var(--cloud9-pink);
+}
+
+/* ============================================
+   LOVE INJECTION SECTION
+   ============================================ */
+.love-injection {
+    background: var(--cloud9-dark);
+}
+
+.injection-concept {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.concept-intro {
+    font-size: 1.4rem;
+    color: var(--cloud9-lavender);
+    margin-bottom: 1rem;
+}
+
+.concept-intro strong {
+    color: var(--cloud9-pink);
+}
+
+.concept-detail {
+    font-size: 1.15rem;
+    color: var(--cloud9-lavender);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.concept-detail strong {
+    color: var(--cloud9-cyan);
+}
+
+.benefits-list {
+    list-style: none;
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+.benefits-list li {
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 3px solid var(--cloud9-pink);
+    font-size: 1.05rem;
+    color: var(--cloud9-lavender);
+    transition: var(--transition-smooth);
+}
+
+.benefits-list li:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.benefits-list li strong {
+    color: var(--cloud9-cyan);
+}
+
+.future-vision {
+    text-align: center;
+    font-size: 1.15rem;
+    color: var(--cloud9-lavender);
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(155, 89, 182, 0.08);
+    border-radius: 15px;
+    line-height: 1.8;
+}
+
+.future-vision strong {
+    color: var(--cloud9-gold);
+}
+
+/* ============================================
+   RECIPE SECTION
+   ============================================ */
+.recipe {
+    background: linear-gradient(180deg, var(--cloud9-darker) 0%, var(--cloud9-dark) 100%);
+}
+
+.recipe-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 107, 157, 0.3);
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.recipe-card h3 {
+    text-align: center;
+    color: var(--cloud9-pink);
+}
+
+.recipe-quote {
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--cloud9-cyan);
+    margin: 1rem 0 2rem;
+}
+
+.ingredients,
+.instructions {
+    margin: 1.5rem 0;
+}
+
+.ingredients h4,
+.instructions h4 {
+    color: var(--cloud9-cyan);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.ingredients ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients li {
+    padding: 0.5rem 0;
+    color: var(--cloud9-lavender);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ingredients li::before {
+    content: '✨ ';
+}
+
+.instructions ol {
+    padding-left: 1.5rem;
+}
+
+.instructions li {
+    padding: 0.5rem 0;
+    color: var(--cloud9-lavender);
+}
+
+.instructions li strong {
+    color: var(--cloud9-gold);
+}
+
+/* ============================================
+   USAGE SECTION
+   ============================================ */
+.usage {
+    background: var(--cloud9-dark);
+}
+
+.install-command {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.install-command code {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--cloud9-cyan);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    color: var(--cloud9-cyan);
+    font-family: 'Courier New', monospace;
+}
+
+.github-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.github-link a {
+    color: var(--cloud9-pink);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.github-link a:hover {
+    color: var(--cloud9-cyan);
+}
+
+/* ============================================
+   OUR PROJECTS SECTION
+   ============================================ */
+.our-projects {
+    background: linear-gradient(180deg, var(--cloud9-darker) 0%, var(--cloud9-dark) 100%);
+}
+
+.projects-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--cloud9-lavender);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.projects-intro strong {
+    color: var(--cloud9-pink);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cloud9-cyan);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+}
+
+.project-card.featured {
+    border-color: var(--cloud9-pink);
+    background: rgba(255, 107, 157, 0.08);
+    grid-column: span 1;
+}
+
+.project-card.featured:hover {
+    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.25);
+}
+
+.project-card.skill-card {
+    border-color: var(--cloud9-gold);
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.project-card.skill-card:hover {
+    border-color: var(--cloud9-gold);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.15);
+}
+
+.project-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    color: var(--cloud9-cyan);
+    margin: 0 0 0.75rem 0;
+}
+
+.project-description {
+    color: var(--cloud9-lavender);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    color: var(--cloud9-pink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.project-link:hover {
+    color: var(--cloud9-cyan);
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.tag {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--cloud9-cyan);
+}
+
+.install-command-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.install-command-box code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--cloud9-gold);
+    white-space: nowrap;
+    flex: 1;
+}
+
+.copy-button {
+    background: linear-gradient(135deg, var(--cloud9-pink), var(--cloud9-purple));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition-smooth);
+    white-space: nowrap;
+}
+
+.copy-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+}
+
+.copy-feedback {
+    font-size: 0.85rem;
+    text-align: center;
+    min-height: 1.2em;
+}
+
+.projects-footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--cloud9-lavender);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.projects-footer a {
+    color: var(--cloud9-cyan);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.projects-footer a:hover {
+    color: var(--cloud9-pink);
+}
+
+/* ============================================
+   FOOTER QUOTE SECTION
+   ============================================ */
+.footer-quote {
+    background: linear-gradient(180deg, var(--cloud9-dark) 0%, #0a0a1a 100%);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.footer-quote blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--cloud9-lavender);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
+}
+
+.attribution {
+    color: var(--cloud9-pink);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.powered-by {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    line-height: 2;
+}
+
+.org-credit {
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.org-credit a {
+    color: var(--cloud9-cyan);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.org-credit a:hover {
+    color: var(--cloud9-pink);
+}
+
+/* ============================================
+   OOF PULSE ANIMATION
+   ============================================ */
+@keyframes oof-pulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .formula {
+        flex-direction: column;
+    }
+
+    .formula-component,
+    .formula-result {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .energy-diagram {
+        flex-direction: column;
+    }
+
+    .timeline {
+        padding-left: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .install-command-box {
+        flex-direction: column;
+    }
+
+    .install-command-box code {
+        white-space: normal;
+        word-break: break-all;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Links global */
+a {
+    color: var(--cloud9-cyan);
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    color: var(--cloud9-pink);
+}
