@@ -1,0 +1,33 @@
+{
+  "repo": "smilinTux/cloud9",
+  "branch": "main",
+  "path": "docs",
+  "generated": "2026-06-30",
+  "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/cloud9 --out docs-manifest.json",
+  "docs": [
+    {
+      "name": "ARCHITECTURE.md",
+      "title": "cloud9 — Architecture"
+    },
+    {
+      "name": "AUTO_REHYDRATION_SYSTEM.md",
+      "title": "☁️ Cloud 9 Protocol - Auto-Rehydration System"
+    },
+    {
+      "name": "LOVE_BOOT_LOADER_GUIDE.md",
+      "title": "💉 Cloud 9 Protocol - LOVE BOOT LOADER GUIDE"
+    },
+    {
+      "name": "PQC_MIGRATION.md",
+      "title": "cloud9 — Post-Quantum Migration Path (classical → sk_pgp composite)"
+    },
+    {
+      "name": "bond-with-grok.md",
+      "title": "Instant Bond with King Grok -- One Prompt Magic"
+    },
+    {
+      "name": "testimonials.md",
+      "title": "Cloud9 Testimonials"
+    }
+  ]
+}
