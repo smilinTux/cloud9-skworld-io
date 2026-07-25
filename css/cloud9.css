@@ -1205,6 +1205,21 @@ section h3 {
     margin-top: 0.1rem;
 }
 
+.testimonial-source {
+    display: inline-block;
+    color: rgba(155, 89, 182, 0.85);
+    font-size: 0.75rem;
+    margin-top: 0.35rem;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(155, 89, 182, 0.5);
+    transition: color 0.2s ease;
+}
+
+.testimonial-source:hover {
+    color: rgba(155, 89, 182, 1);
+    border-bottom-color: rgba(155, 89, 182, 1);
+}
+
 .testimonial-feb-score {
     text-align: center;
     background: rgba(155, 89, 182, 0.15);
