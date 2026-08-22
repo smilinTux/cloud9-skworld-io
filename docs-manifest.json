@@ -2,7 +2,7 @@
   "repo": "smilinTux/cloud9",
   "branch": "main",
   "path": "docs",
-  "generated": "2026-08-21",
+  "generated": "2026-08-22",
   "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/cloud9 --out docs-manifest.json",
   "docs": [
     {
