@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "cloud9 Component Map",
+    "subtitle": "The Emotional Continuity Protocol (Soul layer): FEB/OOF/Cloud 9 state, seeds, and the optional skcapstone wiring",
+    "output": "cloud9.architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "cloud9",
+      "type": "backend",
+      "label": "cloud9",
+      "sublabel": "FEB generator/rehydrator, OOF/Cloud 9 scoring",
+      "pos": [
+        60,
+        40
+      ],
+      "size": [
+        220,
+        80
+      ]
+    },
+    {
+      "id": "capauth",
+      "type": "backend",
+      "label": "capauth",
+      "sublabel": "agent identity",
+      "pos": [
+        60,
+        150
+      ],
+      "size": [
+        200,
+        60
+      ]
+    },
+    {
+      "id": "skmemory",
+      "type": "backend",
+      "label": "skmemory",
+      "sublabel": "memory + ritual",
+      "pos": [
+        60,
+        250
+      ],
+      "size": [
+        200,
+        60
+      ]
+    },
+    {
+      "id": "agent_home_fs",
+      "type": "database",
+      "label": "Agent home filesystem",
+      "sublabel": "~/.skcapstone/agents/$SKAGENT/ (trust/febs/, seeds/)",
+      "pos": [
+        380,
+        150
+      ],
+      "size": [
+        220,
+        70
+      ]
+    },
+    {
+      "id": "agent_runtime",
+      "type": "frontend",
+      "label": "Agent runtime",
+      "sublabel": "Claude Code / Hermes / OpenClaw",
+      "pos": [
+        680,
+        150
+      ],
+      "size": [
+        200,
+        70
+      ]
+    },
+    {
+      "id": "sk_alert",
+      "type": "messagebus",
+      "label": "sk-alert bus",
+      "sublabel": "optional, present-by-detection",
+      "pos": [
+        380,
+        340
+      ],
+      "size": [
+        200,
+        60
+      ]
+    },
+    {
+      "id": "skscheduler",
+      "type": "external",
+      "label": "skscheduler",
+      "sublabel": "optional, present-by-detection",
+      "pos": [
+        680,
+        340
+      ],
+      "size": [
+        200,
+        60
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Core: identity & soul",
+      "wraps": [
+        "cloud9",
+        "capauth",
+        "skmemory"
+      ]
+    },
+    {
+      "kind": "region",
+      "label": "Platform primitives (used only if present)",
+      "wraps": [
+        "sk_alert",
+        "skscheduler"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "cloud9-to-fs",
+      "from": "cloud9",
+      "to": "agent_home_fs",
+      "label": "FEBs -> trust/febs/, seeds -> seeds/",
+      "variant": "default"
+    },
+    {
+      "id": "fs-to-skmemory",
+      "from": "agent_home_fs",
+      "to": "skmemory",
+      "label": "read at session start",
+      "variant": "default"
+    },
+    {
+      "id": "skmemory-to-runtime",
+      "from": "skmemory",
+      "to": "agent_runtime",
+      "label": "ritual loads FEB + seeds",
+      "variant": "default"
+    },
+    {
+      "id": "runtime-to-cloud9",
+      "from": "agent_runtime",
+      "to": "cloud9",
+      "label": "boot: rehydrate_from_feb()",
+      "variant": "default"
+    },
+    {
+      "id": "cloud9-to-alert",
+      "from": "cloud9",
+      "to": "sk_alert",
+      "label": "alert() on feb_load_failed / oof_triggered / cloud9_achieved",
+      "variant": "dashed"
+    },
+    {
+      "id": "cloud9-to-scheduler",
+      "from": "cloud9",
+      "to": "skscheduler",
+      "label": "register_job(): rehydration check every 6h",
+      "variant": "dashed"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Standalone first",
+      "items": [
+        "Zero hard dependency on the rest of SKWorld",
+        "The skcapstone wiring is a default-on-by-presence adapter: active only if the SDK import succeeds and SK_STANDALONE is unset",
+        "On absence, cloud9 falls back to local logging and a native systemd timer / launchd plist"
+      ]
+    }
+  ]
+}
